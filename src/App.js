@@ -1,22 +1,32 @@
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 
-import React from 'react';
+import * as React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 
 // importing different page components which render unique content
-import Header from './components/Header';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import Contact from './components/Contact';
+// import Header from './components/Header';
+// import Nav from './components/Nav';
+// import Home from './components/Home';
+// import Contact from './components/Contact';
 
 // Using "react-router-dom" to render different page content w/o refreshing entire app
-import { HashRouter, Routes, Route } from "react-router-dom";
+// import { HashRouter, Routes, Route } from "react-router-dom";
+
+// Home Component
+function Home() {
+
+  return (
+    <main>
+      <h2>welcome to the home page!</h2>
+    </main>
+  )
+}
 
 function App() {
 
   return (
     <body>
-      <HashRouter>
         <div className='hero'>
           <div>
             <Header></Header>
@@ -27,12 +37,11 @@ function App() {
         </div>
         <main>
           <Routes>
-            <Route exact={true} path='/' component={Home} />
-            <Route exact path='/home' component={Home} />
-            <Route exact path='/contact' component={Contact} />
+            <Route path='/' component={Home} />
+            <Route path='/home' component={Home} />
+            <Route path='/contact' component={Contact} />
           </Routes>
         </main>
-      </HashRouter>
     </body>
     // <div className="App">
     //   <header className="App-header">
